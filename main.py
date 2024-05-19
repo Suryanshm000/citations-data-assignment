@@ -49,7 +49,6 @@ def fetch_all_citations_from_api(api_url):
             break
 
         for data_obj in data:
-            # import pdb; pdb.set_trace()
             source = data_obj.get("source")
             citations = extract_citations(source)
             all_citations.extend(citations)
@@ -64,7 +63,6 @@ if __name__ == "__main__":
     api_url = "https://devapi.beyondchats.com/api/get_message_with_sources"
     citations = fetch_all_citations_from_api(api_url)
 
-    # print(citations)
     st.json({
         "citations": citations
     })
